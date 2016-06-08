@@ -1,0 +1,26 @@
+<div class="panel panel-default">
+  <div class="panel-heading">Website Details</div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-sm-2 text-right"><strong>Name</strong></div>
+      <div class="col-sm-offset-2">: {{model.name}}</div>
+    </div>
+    <div class="row">
+      <div class="col-sm-2 text-right"><strong>Website Type</strong></div>
+      <div class="col-sm-offset-2">: {{getProperty model.wType aliases}}</div>
+    </div>
+    <br/>
+    <div class="panel panel-default">
+      <div class="panel-heading">Additional Details</div>
+      <div class="panel-body">
+        {{#each model.additional as |obj|}}
+        <div class="row">
+          <div class="col-sm-2 text-right"><strong>{{getProperty obj.name aliases}}</strong></div>
+          <div class="col-sm-offset-2">: {{obj.value}}</div>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</div>
+{{outlet}}

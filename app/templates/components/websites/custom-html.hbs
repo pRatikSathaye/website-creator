@@ -1,0 +1,10 @@
+<form>
+  <div class="form-group">
+    <label for="code">Custom HTML</label>
+    <!--<input type="text" class="form-control" id="code" placeholder="Code">-->
+    {{component 'ace-editor' value=content updateValue='setEditorValue'}}
+    <div id="editor"></div>
+  </div>
+  <button type="submit" {{action 'saveForm'}} class="btn btn-primary">Save</button>
+</form>
+{{yield}}

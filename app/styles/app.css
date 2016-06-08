@@ -1,0 +1,19 @@
+.bs-docs-nav {
+  background: #da5024
+}
+
+.navbar-brand {
+  color: white;
+}
+
+.navbar-brand:hover {
+  color: aliceblue
+}
+
+pre {
+  height: 120px;
+}
+#editor {
+  height: 200px;
+  border: 1px solid darkgrey;
+}

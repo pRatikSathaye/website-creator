@@ -1,0 +1,18 @@
+<div class="col-md-3">
+  <div class="panel panel-default">
+    <div class="panel-heading">Websites</div>
+    <div class="panel-body">
+      <ul class="list-group">
+        {{#each model as |website|}}
+          {{#link-to 'websites.website' website.id class="list-group-item" }}
+            {{website.name}}
+          {{/link-to}}
+        {{/each}}
+      </ul>
+      {{#link-to 'websites.new'}}<button class="btn btn-primary">New Website</button>{{/link-to}}
+    </div>
+  </div>
+</div>
+<div class="col-xs-9">
+  {{outlet}}
+</div>

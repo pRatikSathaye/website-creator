@@ -1,0 +1,28 @@
+<div class="panel panel-default">
+  <div class="panel-heading">New Website</div>
+  <div class="panel-body">
+    {{#if isInvalid}}
+      <ul class="has-error">
+      {{#each errors as |error|}}
+        <li class="control-label">{{error}}</li>
+      {{/each}}
+      </ul>
+    {{/if}}
+    <div class="form-group">
+      <label for="type">Type</label>
+      {{#bs-dropdown id="type"}}
+        {{#bs-dropdown-button}}{{currentSelection}} <span class="caret"></span>{{/bs-dropdown-button}}
+        {{#bs-dropdown-menu}}
+          <li {{action 'setIsCustom' 'pre-defined'}}><a href="#">Predefined Template</a></li>
+          <li {{action 'setIsCustom' 'custom-html'}}><a href="#">Custom HTML</a></li>
+        {{/bs-dropdown-menu}}
+    {{/bs-dropdown}}
+    </div>
+    <div class="form-group">
+      <label for="name">Name</label>
+      {{input type="text" class="form-control" id="name" value=name placeholder="Name"}}
+    </div>
+    {{component componentName checkErrors='checkErrors' setFormValues='setFormValues' newModel=model}}
+    {{outlet}}
+  </div>
+</div>
